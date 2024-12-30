@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        const person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
+        document.write(person.firstName + " is " + person["age"] + " years old.");
+
+        // Create an Object
+        const person1 = {};
+        //const person = new Object();
+
+        // Add Properties
+        person1.firstName = "John";
+        person1.lastName = "Doe";
+        person1.age = 50;
+        person1.eyeColor = "blue";
+
+
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.write("<br>");  //new line
+        document.write(person2.fullName());
+        document.write("<br>");  //new line
+
+
+        // Create an Object
+        const person3 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        // Create a Copy
+        const x = person3;
+
+        // Change Age
+        x.age = 10;
+        document.write(person3.firstName + " is " + person3.age + " years old.");
+
+
+    </script>
+</body>
+
+</html>

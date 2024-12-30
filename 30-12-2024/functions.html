@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        function name(parameter1, parameter2, parameter3) {
+            // code to be executed
+        }
+
+        // The code inside the function will execute when "something" calls the function:
+
+        // - When an event occurs (when a user clicks a button)
+        // - When it is invoked (called) from JavaScript code
+        // - Automatically (self invoked)
+
+        function myFunction(a, b) {
+            return a * b;
+        }
+        let x = myFunction(7, 5); //can write it before define the function
+        document.write(x);
+
+        document.write("<br>");  //new line
+
+        function toCelsius(f) {
+            return (5 / 9) * (f - 32);
+        }
+        let value1 = toCelsius(77);
+        let value2 = toCelsius();
+        let value3 = toCelsius;
+
+        document.write(value1);
+        document.write("<br>");  //new line
+        document.write(value2);
+        document.write("<br>");  //new line
+        document.write(value3);
+        document.write("<br>");  //new line
+
+
+        let text = "The temperature is " + toCelsius(77) + " Celsius."; //or value1 instead of toCelsius(77)
+        document.write(text);
+        document.write("<br>");  //new line
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
