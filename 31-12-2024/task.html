@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+
+    <style>
+        button {
+            height: 10vw;
+            width: 30vw;
+            background-color: plum;
+            border: .52vw solid rgb(95, 92, 94);
+            border-radius: 4vw;
+            font-size: 4vw;
+        }
+
+        .task1 {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .task2 {
+            text-align: center;
+        }
+
+        .box {
+            border: .52vw solid rgb(95, 92, 94);
+            border-radius: 4vw;
+            font-size: 4vw;
+            margin-top: 1vw;
+            height: 15vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Task 1</h1>
+    <div class="task1"><button id="btn">hover here</button><br><br></div>
+    <hr>
+    <hr>
+    <h1>Task 2</h1>
+    <div class="task2">
+    
+            <select style="width: 10vw;" onchange="myFunction1(this);">
+                <option value="Times Roman" id="Times Roman" selected>Times Roman</option>
+                <option value="Fantasy" id="Fantasy">Fantasy</option>
+                <option value="Arial" id="Arial">Arial</option>
+                <option value="Impact" id="Impact">Impact</option>
+                <option value="Tahoma" id="Tahoma">Tahoma</option>
+                <option value="Courier New" id="Courier New">Courier New</option>
+            </select>
+
+            
+
+            
+            <select onchange="myFunction2(this);">
+                <option value="4vw" id="4vw" selected>4vw</option>
+                <option value="5vw" id="5vw">5vw</option>
+                <option value="3vw" id="3vw">3vw</option>
+            </select>
+            <input type="checkbox" id="italic" name="italic" value="italic" onclick="italic()">
+            <label for="italic"> Italic</label>
+            <input type="checkbox" id="bold" name="bold" value="bold" onclick="bold()">
+            <label for="bold"> Bold</label>
+            <input type="checkbox" id="underline" name="underline" value="underline" onclick="underline()">
+            <label for="underline"> Underline</label>
+
+        <div class="box">
+            <p id="happy">
+                Happy New Year!
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+
+        // *** Task 1 ***
+        let btn = document.getElementById('btn');
+        btn.onmouseover = function () {
+            btn.innerHTML = "Hello World!"
+        }
+        btn.onmouseout = function () {
+            btn.innerHTML = "Can i help you?!"
+        }
+
+        // *** Task 2 ***
+
+        function myFunction1(selectTag) {
+            var listValue = selectTag.options[selectTag.selectedIndex].text;
+            document.getElementById("happy").style.fontFamily = listValue;
+        }
+
+        function myFunction2(selectTag) {
+            var listValue = selectTag.options[selectTag.selectedIndex].text;
+            document.getElementById("happy").style.fontSize = listValue;
+        }
+
+        function italic(){
+            document.getElementById('happy').style.fontStyle = "italic";
+        }
+
+        function bold(){
+            document.getElementById('happy').style.fontWeight = "bold";            
+        }
+
+        function underline(){
+            document.getElementById('happy').style.textDecoration = "underline";
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
