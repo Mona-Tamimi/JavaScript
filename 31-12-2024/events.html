@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            height: 10vw;
+            width: 20vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <button id="btn1" onclick="console.log('inside html')">click1</button><br><br>
+    <button id="btn2" onclick="clicked()">click2</button><br><br> -->
+
+    <button id="btn1" >click1</button><br><br>
+    <button id="btn2" >click2</button><br><br>
+
+
+
+
+    <script>
+
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+
+
+        // ******onclick****** 
+
+        function clicked() {
+            console.log('clicked');
+            btn2.style.background = 'red';
+        }
+        function mouseover() {
+            console.log('mouseover');
+            btn1.style.background = 'red';
+        }
+        function mouseout() {
+            console.log('mouseout');
+            btn1.style.background = 'red';
+        }
+
+
+        // btn1.onclick = clicked;
+
+        // btn2.onclick = function () {
+        //     console.log('by ID'); 
+        // }
+        // btn2.addEventListener('click', function () {
+        //     console.log('by ddEventListener');
+
+        // })
+
+
+        // **difference between onclick & addEventListener**
+
+        // btn1.onclick = function () {
+        //     console.log('first by ID'); //btn1.style.background ='red';
+        // }
+        // btn1.onclick = function () {
+        //     console.log('second by ID'); //btn1.style.background ='red';
+        // }
+        // btn1.onclick = function () {
+        //     console.log('third by ID'); //btn1.style.background ='red';
+        // }
+
+        
+        // btn2.addEventListener ('click',function () {
+        //     console.log('first by ddEventListener');
+
+        // })
+        // btn2.addEventListener ('click',function () {
+        //     console.log('second by ddEventListener');
+
+        // })
+        // btn2.addEventListener ('click',function () {
+        //     console.log('third by ddEventListener');
+
+        // })
+
+
+
+
+
+        // ******onmouseover****** 
+
+        // btn1.onmouseover = mouseover;
+        // btn2.onmouseover = function () {
+        //     console.log('by ID'); 
+        // }
+        // btn2.addEventListener('mouseover', function () {
+        //     console.log('by ddEventListener');
+
+        // })
+
+
+
+
+        // ******onmouseout****** 
+
+        // btn1.onmouseout = mouseout;
+        // btn2.onmouseout = function () {
+        //     console.log('by ID'); 
+        // }
+        // btn2.addEventListener('mouseout', function () {
+        //     console.log('by addEventListener');
+
+        // })
+        
+
+
+    </script>
+</body>
+
+</html>
