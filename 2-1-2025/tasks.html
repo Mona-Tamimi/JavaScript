@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // Task 1
+    function tellFortune(feild, city, partner, kids) {
+      document.write("You will be a " + feild + " in " + city + ", and married to " + partner + " with " + kids + " kids." + "<br>" + "<br>");
+    }
+    document.write('Task 1' + "<br>")
+    tellFortune('electrical', 'jordan', 'partner', 2);
+
+
+    // Task 2
+    function calculateDogAge(age) {
+      return age * 7;
+    }
+    document.write('Task 2' + "<br>")
+
+    document.write('Your doggie is ' + calculateDogAge(5) + ' years old in dog years!' + "<br>" + "<br>")
+
+    /*
+3
+Write a function named calculateSupply that:
+takes 2 arguments: age, amount per day.
+calculates the amount consumed for rest of the life (based on a constant max age 100).
+outputs the result to the screen like so:
+"You will need NN to last you until the ripe old age of X"
+
+Ex: calculateSupply(30, 3);
+=> 'You will need 76650 cups of tea to last you until the ripe old age of 100;
+*/
+
+    // Task 3
+    function calculateSupply(age, amount) {
+      var cups = (100 - age) * 365 * amount;
+      document.write("You will need " + cups + " to last you until the ripe old age of " + "100" + "<br>" + "<br>");
+    }
+    document.write('Task 3' + "<br>")
+
+    calculateSupply(23, 1);
+
+    // Task 4
+    function greet(name) {
+      document.write('hello ' + name + '!' + "<br>" + "<br>");
+    }
+    document.write('Task 4' + "<br>")
+    greet('Mona');
+
+    // Task 5
+
+
+    /* what is the error:
+function double(cat) {
+return 2 * x;
+}
+Error: x is not defined
+
+function double(7) {
+return 2 * 7;
+}
+Error: parameter must be variable
+
+function double('7') {
+return 2 * 'x';
+}
+Error: parameter can't be string
+*/
+
+
+    // Task 6
+
+    //fix these functions:
+    function double1(x) {
+      return 2 * x;
+    }
+
+    function double2(x) {
+      return 2 * x;
+    }
+
+    function double3(x) {
+      return 2 * x;
+    }
+
+    // Task 7
+
+    function cube(length) {
+      return length ** 3;
+    }
+
+    document.write('Task 7' + "<br>")
+    document.write(cube(2) + "<br>" + "<br>");
+
+
+    // Task 8
+
+    function multiply(num1, num2) {
+      return num1 * num2;
+    }
+    document.write('Task 8' + "<br>")
+    document.write(multiply(5, 8) + "<br>" + "<br>");
+
+
+    // Task 9
+    function canIGetADrivingLicense(age) {
+      // let i=age
+      let i = 0;
+      if (age >= 20) {
+        document.write('yes you can');
+      } else {
+        i = 20 - age;
+        document.write("please come back after " + i + " years to get one");
+      }
+    }
+    document.write('Task 9' + "<br>")
+    canIGetADrivingLicense(16);
+    document.write("<br>" + "<br>");
+
+
+    // Task 10 
+
+    function sameLength(word1, word2) {
+      let length1 = word1.length;
+      let length2 = word2.length;
+      if (length1 == length2) {
+        document.write('True');
+      } else {
+        document.write('False');
+      }
+    }
+    document.write('Task 10' + "<br>")
+    sameLength('Mona', 'Salam');
+    document.write("<br>" + "<br>");
+
+    // Task 11
+
+    function largerNubmer(n1, n2) {
+      if (n1 > n2) {
+        return n1;
+      } else {
+        return n2;
+      }
+    }
+    document.write('Task 11' + "<br>")
+    document.write(largerNubmer(6, 11) + "<br>" + "<br>");
+
+
+    // Task 12
+
+    function smallerNubmer(n1, n2, n3) {
+      if (n1 < n2 && n1 < n3) {
+        return n1;
+      } else if (n2 < n1 && n2 < n3) {
+        return n2
+      } else if (n3 < n1 && n3 < n2) {
+        return n3;
+      }
+    }
+    document.write('Task 12' + "<br>")
+    document.write(smallerNubmer(6, 11, 3) + "<br>" + "<br>");
+
+
+    // Task 13
+
+    function shorterString(s1, s2, s3, s4, s5) {
+      let s1l = s1.length;
+      let s2l = s2.length;
+      let s3l = s3.length;
+      let s4l = s4.length;
+      let s5l = s5.length;
+      if (s1l < s2l && s1l < s3l && s1l < s4l && s1l < s5l) {
+        return s1;
+      } else if (s2l < s1l && s2l < s3l && s2l < s4l && s2l < s5l) {
+        return s2;
+      } else if (s3l < s1l && s3l < s2l && s3l < s4l && s3l < s5l) {
+        return s3;
+      } else if (s4l < s1l && s4l < s2l && s4l < s3l && s4l < s5l) {
+        return s4;
+      } else if (s5l < s1l && s5l < s2l && s5l < s3l && s5l < s4l) {
+        return s5;
+      }
+    }
+    document.write('Task 13' + "<br>")
+    document.write(shorterString('January', 'February', 'March', 'April', 'May') + "<br>" + "<br>");
+
+
+    // Task 14
+
+    function longerString(s1, s2, s3, s4, s5) {
+      let s1l = s1.length;
+      let s2l = s2.length;
+      let s3l = s3.length;
+      let s4l = s4.length;
+      let s5l = s5.length;
+      if (s1l > s2l && s1l > s3l && s1l > s4l && s1l > s5l) {
+        return s1;
+      } else if (s2l > s1l && s2l > s3l && s2l > s4l && s2l > s5l) {
+        return s2;
+      } else if (s3l > s1l && s3l > s2l && s3l > s4l && s3l > s5l) {
+        return s3;
+      } else if (s4l > s1l && s4l > s2l && s4l > s3l && s4l > s5l) {
+        return s4;
+      } else if (s5l > s1l && s5l > s2l && s5l > s3l && s5l > s4l) {
+        return s5;
+      }
+    }
+    document.write('Task 14' + "<br>")
+    document.write(longerString('January', 'February', 'March', 'April', 'May') + "<br>" + "<br>");
+
+
+
+    // Task 15
+
+    function isEven(n1) {
+      if (n1 % 2 == 0) {
+        return 'True';
+      } else {
+        return 'False';
+      }
+    }
+    document.write('Task 15' + "<br>")
+    document.write(isEven(5) + "<br>" + "<br>");
+
+
+    // Task 16 
+
+    function isOdd(n1) {
+      if (n1 % 2 != 0) {
+        return 'True';
+      } else {
+        return 'False';
+      }
+    }
+    document.write('Task 16' + "<br>")
+    document.write(isOdd(5) + "<br>" + "<br>");
+
+    // Task 17
+
+    function positive(n1) {
+      if (n1 >= 0) {
+        return n1;
+      } else {
+        return n1 * -1;
+      }
+    }
+    document.write('Task 17' + "<br>")
+    document.write(positive(-5) + "<br>" + "<br>");
+
+
+    // Task 18
+
+    function fullName(firstName, lastName) {
+      return firstName + ' ' + lastName;
+    }
+    document.write('Task 18' + "<br>")
+    document.write(fullName('Mona', 'Tamimi') + "<br>" + "<br>");
+
+    // Task 19 
+
+    function average(n1, n2, n3, n4, n5) {
+      let avg = (n1 + n2 + n3 + n4 + n5) / 5;
+      return avg;
+    }
+    document.write('Task 19' + "<br>")
+    document.write(average(1, 2, 3, 4, 5) + "<br>" + "<br>");
+
+    // Task 20 
+
+    function randomNumber() {
+      return Math.random();
+    }
+    document.write('Task 20' + "<br>")
+    document.write(randomNumber(0, 1) + "<br>" + "<br>");
+
+    // Task 21
+
+    function randomNumber(n1, n2) {
+      return Math.random() * (n2 - n1) + n1;
+    }
+    document.write('Task 21' + "<br>")
+    document.write(randomNumber(4, 10) + "<br>" + "<br>");
+
+
+
+    // Task 22
+
+    function scoreInUniversty(grade) {
+      if (grade >= 95 && grade <= 100) {
+        return 'A';
+      } else if (grade >= 85 && grade <= 94) {
+        return 'B';
+      } else if (grade >= 70 && grade <= 84) {
+        return 'C';
+      } else if (grade >= 50 && grade <= 69) {
+        return 'D';
+      } else if (grade >= 0 && grade <= 49) {
+        return 'F';
+      }
+    }
+    document.write('Task 22' + "<br>")
+    document.write(scoreInUniversty(99.6) + "<br>" + "<br>");
+
+
+    // Task 23
+    let i = 0;
+    function counter() {
+      let j = i + 1;
+      document.write(j);
+      i++;
+    }
+    document.write('Task 23' + "<br>")
+    counter();
+    document.write("<br>");
+
+    counter();
+    document.write("<br>");
+
+    counter();
+    document.write("<br>");
+
+    counter();
+    document.write("<br>");
+
+    counter();
+    document.write("<br>" + "<br>");
+
+
+    // Task 24
+
+    function resetCounter() {
+      counter(--i);
+    document.write(' and the counter reset now'+"<br>" + "<br>");
+    i=0;
+    }
+    document.write('Task 24' + "<br>")
+    resetCounter();
+    counter();
+    document.write("<br>");
+
+    counter();
+    document.write("<br>");
+    
+    counter();
+    document.write("<br>");
+
+
+  </script>
+
+</body>
+
+</html>
