@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            height: 10vw;
+            width: 20vw;
+        }
+    </style>
+</head>
+
+<body>
+    <p> Click the following button to see the effect.</p>
+    <button id = "btn">Button 1</button>
+    <p id="paragh1"></p>
+    <button id="btn1" >Button 2</button><br><br>
+    <button id="btn2" >Button 3</button><br><br>
+
+    <script>
+        function btneffect() {
+            btn.style.width = "150px";
+            btn.style.height = "100px";
+            btn.style.background = "green";
+            btn.style.color = "white";
+        }
+
+
+        function btnpar() {
+            document.getElementById("paragh1").innerHTML = "This is a paragraph";
+        }
+
+
+        function btnreturn() {
+            btn.style.width = "";
+            btn.style.height = "";
+            btn.style.background = "";
+            btn.style.color = "";
+        }
+
+        let clickbtn = document.getElementById("btn");
+        clickbtn.addEventListener("mouseover", btneffect);
+        clickbtn.addEventListener("click", btnpar);
+        clickbtn.addEventListener("mouseout", btnreturn);
+
+         // **difference between onclick & addEventListener**
+
+         btn1.onclick = function () {
+            console.log('first by ID'); //btn1.style.background ='red';
+        }
+        btn1.onclick = function () {
+            console.log('second by ID'); //btn1.style.background ='red';
+        }
+        btn1.onclick = function () {
+            console.log('third by ID'); //btn1.style.background ='red';
+        }
+
+        
+        btn2.addEventListener ('click',function () {
+            console.log('first by ddEventListener');
+
+        })
+        btn2.addEventListener ('click',function () {
+            console.log('second by ddEventListener');
+
+        })
+        btn2.addEventListener ('click',function () {
+            console.log('third by ddEventListener');
+
+        })
+
+    </script>
+</body>
+
+</html>

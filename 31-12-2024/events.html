@@ -33,18 +33,18 @@
 
         // ******onclick****** 
 
-        function clicked() {
-            console.log('clicked');
-            btn2.style.background = 'red';
-        }
-        function mouseover() {
-            console.log('mouseover');
-            btn1.style.background = 'red';
-        }
-        function mouseout() {
-            console.log('mouseout');
-            btn1.style.background = 'red';
-        }
+        // function clicked() {
+        //     console.log('clicked');
+        //     btn2.style.background = 'red';
+        // }
+        // function mouseover() {
+        //     console.log('mouseover');
+        //     btn1.style.background = 'red';
+        // }
+        // function mouseout() {
+        //     console.log('mouseout');
+        //     btn1.style.background = 'red';
+        // }
 
 
         // btn1.onclick = clicked;
@@ -60,29 +60,29 @@
 
         // **difference between onclick & addEventListener**
 
-        // btn1.onclick = function () {
-        //     console.log('first by ID'); //btn1.style.background ='red';
-        // }
-        // btn1.onclick = function () {
-        //     console.log('second by ID'); //btn1.style.background ='red';
-        // }
-        // btn1.onclick = function () {
-        //     console.log('third by ID'); //btn1.style.background ='red';
-        // }
+        btn1.onclick = function () {
+            console.log('first by ID'); //btn1.style.background ='red';
+        }
+        btn1.onclick = function () {
+            console.log('second by ID'); //btn1.style.background ='red';
+        }
+        btn1.onclick = function () {
+            console.log('third by ID'); //btn1.style.background ='red';
+        }
 
         
-        // btn2.addEventListener ('click',function () {
-        //     console.log('first by ddEventListener');
+        btn2.addEventListener ('click',function () {
+            console.log('first by ddEventListener');
 
-        // })
-        // btn2.addEventListener ('click',function () {
-        //     console.log('second by ddEventListener');
+        })
+        btn2.addEventListener ('click',function () {
+            console.log('second by ddEventListener');
 
-        // })
-        // btn2.addEventListener ('click',function () {
-        //     console.log('third by ddEventListener');
+        })
+        btn2.addEventListener ('click',function () {
+            console.log('third by ddEventListener');
 
-        // })
+        })
 
 
 
