@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Append Child</title>
+  </head>
+  <body>
+    <!-- EX: 1 => add new element -->
+
+    <!-- <ul id="unorderList">
+        
+    </ul> -->
+
+    <!--  EX: 2 =>  move an existing element -->
+    <!-- <ul id="names">
+      <li>Khalid</li>
+      <li>Suhaib</li>
+      <li>Ayman</li>
+    </ul>
+
+    <ul id="cities">
+      <li>Irbid</li>
+      <li>Amman</li>
+      <li>Aqaba</li>
+    </ul> -->
+
+    <!--  EX: 3 =>  backtick -->
+
+    <div id="container">
+        <h2>jdkfns</h2>
+    </div>
+
+    <script>
+
+
+
+      // EX: 1 =>  how to add new element
+        // function createListItem(name) {
+    //   create a new list
+        //   let newList = document.createElement("li");
+        //   newList.textContent = name;
+        //   return newList;
+        // }
+
+        // let parentList = document.getElementById("unorderList");
+
+        // parentList.appendChild(createListItem("User: Khalid"));
+        // parentList.appendChild(createListItem("Age: 25"));
+        // parentList.appendChild(createListItem("City: Irbid"));
+
+      //   EX: 1 => how to add new element without Function
+
+        // let parentList = document.getElementById("unorderList")
+        //  let newList = document.createElement('li')
+        
+        //  newList.textContent = "User: Khalid"
+
+        //  parentList.appendChild(newList)
+
+      // How to move an existing element within the same document using appendchild()
+
+      // get namesList
+    //   const namesList = document.getElementById("names");
+    //   // get the first child element
+    //   const khalidName = namesList.firstElementChild;
+    //   // where i want to add khalidName?
+    //   const citiesList = document.getElementById("cities");
+    //   // append Khalid to cities
+    //   citiesList.appendChild(khalidName);
+
+      // Backtick
+
+      let container = document.getElementById("container");
+
+      // Create a new div element
+      let newElement = document.createElement("p");
+
+      let p1 = newElement.innerHTML = "hello"
+
+      // Use backticks for a template literal
+      newElement.innerHTML = `
+        <h2>Welcome!</h2>
+        <p>This is added using appendChild and backticks.</p> 
+        <p>This is added using appendChild and backticks.</p> 
+        <p>This is added using appendChild and backticks.</p> 
+        <p>This is added using appendChild and backticks.</p> 
+        <p>This is added using appendChild and backticks.</p> 
+        <p>This is added using appendChild and backticks.</p> 
+        <p>This is added using appendChild and backticks  ${p1} .</p>
+       
+            `;
+
+      // Append the element to the container
+      container.appendChild(newElement);
+    </script>
+  </body>
+</html>

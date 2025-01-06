@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        select {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form method="" action="" name="myForm">
+            <select size="4" name="switch" onchange="switchImage();">
+                <option value="1">Jordan</option>
+                <option value="2">Palestine</option>
+                <option value="3">Iraq</option>
+                <option value="4">Syria</option>
+            </select>
+        </form>
+        <img src="jordan.png" name="myImage" />
+    </div>
+
+    <script>
+        var imageList = {
+            1: "jordan.png",
+            2: "palestine.png",
+            3: "iraq.png",
+            4: "syria.png"
+        };
+
+        function switchImage() {
+            var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
+            document.myImage.src = imageList[selectedImage];
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date objects</title>
+</head>
+<body>
+    <script>
+        // Creating Date Objects
+
+        // 1- Without arguments: Gets the current date and time.
+
+        let date1 = new Date();
+        console.log(date1); // Example: Mon Jan 06 2025 10:26:06 GMT+0300 (GMT+03:00)
+
+
+        // 2- Using a specific date and time
+
+        let specificDate = new Date(2025, 1, 5, 10, 0, 0); // Jan 5, 2025, 10:00:00
+        console.log(specificDate);
+
+
+        // 3- From a timestamp (milliseconds since January 1, 1970).
+
+        let timestampDate = new Date(1672915200000);
+        console.log(timestampDate); // Example: Jan 5, 2023
+
+
+        // 4-From a date string:
+
+        let stringDate = new Date("2025-01-05T10:00:00"); //T or space
+        console.log(stringDate);
+
+
+        // Date Get Methods
+        
+        // Create a new Date object for January 5, 2025, 10:00:00
+        let date = new Date(2025, 0, 5, 10, 0, 0);
+
+        console.log("Full Date:", date);
+
+        console.log("Year:", date.getFullYear()); // 2025
+        console.log("Month (0-11):", date.getMonth()); // 0 (January)
+        console.log("Day of Month:", date.getDate()); // 5
+        console.log("Day of Week (0-6):", date.getDay()); // 0 (Sunday)
+        console.log("Hour (0-23):", date.getHours()); // 10
+        console.log("Minutes (0-59):", date.getMinutes()); // 0
+        console.log("Seconds (0-59):", date.getSeconds()); // 0
+        console.log("Milliseconds (0-999):", date.getMilliseconds()); // 0
+        console.log("Timestamp:", date.getTime()); // Milliseconds since January 1, 1970
+        console.log("Timezone Offset (in minutes):", date.getTimezoneOffset());
+    </script>
+</body>
+</html>

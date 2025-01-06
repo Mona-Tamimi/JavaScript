@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form to Card</title>
+    <style>
+        #userForm {
+            width: 500px;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .card {
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px;
+            background-color: #f9f9f9;
+        }
+
+        .card2 {
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px;
+            margin-left: 30px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="userForm">
+        <fieldset>
+            <legend>User Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required /><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required /><br><br>
+            <label>Enter your gender:</label>
+            <input type="radio" name="gender" value="male" id="male" required />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="female" id="female" />
+            <label for="female">Female</label><br><br>
+            <label for="dob">Birth Date:</label>
+            <input type="date" id="dob" name="dob" required /><br><br>
+            <label for="myFile">Upload Your Image:</label>
+            <input type="file" id="myFile" name="filename"><br><br>
+            <hr>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required /><br><br>
+            <label for="Major">Major & University:</label>
+            <input type="text" id="Major" name="Major" required /><br><br>
+            <label>Programming Languages:</label>
+            <input type="checkbox" id="html" value="HTML"> HTML
+            <input type="checkbox" id="css" value="CSS"> CSS
+            <input type="checkbox" id="javascript" value="JavaScript"> JavaScript<br><br>
+            <hr>
+            <label for="siblings">Siblings:</label>
+            <input type="text" id="siblings" name="siblings" required /><br><br>
+            <label for="siblingsDec">Siblings Description:</label>
+            <input type="text" id="siblingsDec" name="siblingsDec" required /><br><br>
+            <button type="button" onclick="Submit()">Submit</button>
+        </fieldset>
+    </form>
+    <div id="card" class="card">
+        <p id="outputName">Name:</p>
+        <p id="outputAge">Age:</p>
+        <p id="outputGender">Gender:</p>
+        <p id="outputBirthdate">Birthdate:</p>
+        <p id="outputImage">
+            image:<br>
+            <img style="max-width: 100%; margin-top: 20px;" />
+        </p>
+        <p id="outputDescription">Description:</p>
+        <p id="outputMajor">Major & University:</p>
+        <p id="outputLanguages">Programming Languages:</p>
+        <p id="outputSiblings">Siblings:</p>
+        <p id="outputSiblingsDesc">Siblings Description:</p>
+    </div>
+
+    <script>
+        function Submit() {
+            const form = document.getElementById("userForm");
+
+            // Get element
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const gender = form.querySelector('input[name="gender"]:checked')?.value || "Not specified";
+            const dob = document.getElementById("dob").value;
+            const description = document.getElementById("description").value;
+            const major = document.getElementById("Major").value;
+            const siblings = document.getElementById("siblings").value;
+            const siblingsDesc = document.getElementById("siblingsDec").value;
+            const languages = [];
+            if (document.getElementById("html").checked) languages.push("HTML");
+            if (document.getElementById("css").checked) languages.push("CSS");
+            if (document.getElementById("javascript").checked) languages.push("JavaScript");
+
+            const fileInput = document.getElementById("myFile");
+            const file = fileInput.files[0];
+
+            // Saving data to localStorage
+            localStorage.setItem("name", name);
+            localStorage.setItem("age", age);
+            localStorage.setItem("gender", gender);
+            localStorage.setItem("dob", dob);
+            localStorage.setItem("description", description);
+            localStorage.setItem("major", major);
+            localStorage.setItem("siblings", siblings);
+            localStorage.setItem("siblingsDesc", siblingsDesc);
+            localStorage.setItem("languages", languages.join(", "));
+
+            document.getElementById("card").className = 'card2';
+
+            // Displaying data in card
+            document.getElementById("outputName").innerText = "Name: " + name;
+            document.getElementById("outputAge").innerText = "Age: " + age;
+            document.getElementById("outputGender").innerText = "Gender: " + gender;
+            document.getElementById("outputBirthdate").innerText = "Birthdate: " + dob;
+            document.getElementById("outputDescription").innerText = "Description: " + description;
+            document.getElementById("outputMajor").innerText = "Major & University: " + major;
+            document.getElementById("outputLanguages").innerText = "Programming Languages: " + languages.join(", ");
+            document.getElementById("outputSiblings").innerText = "Siblings: " + siblings;
+            document.getElementById("outputSiblingsDesc").innerText = "Siblings Description: " + siblingsDesc;
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    let existingImg = document.getElementById("outputImage").querySelector("img");
+                    existingImg.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+
+</html>

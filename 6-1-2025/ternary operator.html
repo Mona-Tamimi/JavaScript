@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary Operators</title>
+</head>
+
+<body>
+    <script>
+
+        // Ternary Operators
+        // same example using if else & ternary operator
+
+        // if else 
+        let number = 10;
+        let result1;
+        if (number % 2 === 0) {
+            result1 = 2;
+        } else {
+            result1 = 5;
+        }
+        console.log(result1);
+
+        // Ternary Operators
+        let result2 = number % 2 === 0 ? 2 : 5;
+        console.log(result2);
+
+
+        // example
+
+        let age = 60;
+        let res1 = (age > 59) ? "Adult" : "Not Adult";
+
+        console.log(res1);
+
+        // Nested Ternary Operators 
+
+        let marks = 95;
+        let res2 = (marks < 40) ? "Unsatisfactory" :
+            (marks < 60) ? "Average" :
+                (marks < 80) ? "Good" : "Excellent";
+
+        console.log(res2);
+
+
+    </script>
+</body>
+
+</html>
