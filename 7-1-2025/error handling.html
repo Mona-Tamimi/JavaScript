@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .error-message {
+      color: red;
+      font-weight: bold;
+    }
+    .success-message {
+      color: green;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Error Handling Example</h1>
+  <p id="message"></p>
+  <button onclick="triggerError()">Run Code</button>
+
+  <script>
+    // This code is written by a student to demonstrate try, catch, throw, and finally in JavaScript.
+    function triggerError() {
+      let messageElement = document.getElementById("message");
+      
+      // Using try to attempt code execution
+      try {
+        // Prompting the user for input
+        let number = prompt("Please enter a number:");
+        
+        // Checking if the input is not a number
+        if (isNaN(number)) {
+          // Throwing an error if the input is invalid
+          throw "Invalid input! Please enter a valid number.";
+        }
+        
+        // If input is valid, display success message
+        messageElement.textContent = "You entered the number successfully: " + number;
+        messageElement.className = "success-message";
+      } catch (error) {
+        // Handling the error
+        messageElement.textContent = "Error: " + error;
+        messageElement.className = "error-message";
+      } finally {
+        // Code here runs whether or not an error occurred
+        console.log("Code execution completed, with or without errors.");
+      }
+    }
+  </script>
+
+</body>
+</html>

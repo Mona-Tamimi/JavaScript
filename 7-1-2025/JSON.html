@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch JSON Example</title>
+</head>
+<body>
+    <h1>Data from JSON</h1>
+    <div id="data"></div>
+
+    <script>
+        fetch('data.json')
+            .then(response => response.json()) // Parse JSON data
+            .then(data => {
+                document.getElementById('data').innerHTML = data.posts[1].id; // Display message
+                // document.getElementById('data').innerHTML = data.posts[1].id; // Display message
+            })
+            .catch(error => console.error('Error:', error)); // Handle error
+    </script>
+</body>
+</html>

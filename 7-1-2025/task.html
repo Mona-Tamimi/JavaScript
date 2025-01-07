@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="fname">Enter a First Name:</label>
+    <input type="text" id="fname" name="fname" oninput="ValidateFN()" required />
+    <span id="Rfname" class="error-message"></span><br><br>
+
+    <label for="lname">Enter a Last Name:</label>
+    <input type="text" id="lname" name="lname" oninput="ValidateLN()" required />
+    <span id="Rlname" class="error-message"></span><br><br>
+
+    <label for="bdate">Enter a Birthdate:</label>
+    <input type="text" id="bdate" name="bdate" oninput="ValidateBD()" required />
+    <span id="Rbdate" class="error-message"></span><br><br>
+
+    <label for="email">Enter an Email:</label>
+    <input type="email" id="email" name="email" oninput="ValidateE()" required />
+    <span id="Remail" class="error-message"></span><br><br>
+
+    <label for="cemail">Confirm Email:</label>
+    <input type="email" id="cemail" name="cemail" oninput="ValidateCE()" required />
+    <span id="Rcemail" class="error-message"></span><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" oninput="ValidateP()" required />
+    <span id="Rpassword" class="error-message"></span><br><br>
+
+    <label for="cpassword">Confirm Password:</label>
+    <input type="password" id="cpassword" name="cpassword" oninput="ValidateCP()" required />
+    <span id="Rcpassword" class="error-message"></span><br><br>
+
+    <script>
+        // First Name Validation
+        function ValidateFN() {
+            const fname = document.getElementById("fname").value;
+            const fnamePattern = /^[a-zA-Z]{3,15}$/;
+            document.getElementById("Rfname").innerText =
+                fnamePattern.test(fname) ? "" : "Invalid First Name. Must be 3-15 letters.";
+        }
+
+        // Last Name Validation
+        function ValidateLN() {
+            const lname = document.getElementById("lname").value;
+            const lnamePattern = /^[a-zA-Z]{3,15}$/;
+            document.getElementById("Rlname").innerText =
+                lnamePattern.test(lname) ? "" : "Invalid Last Name. Must be 3-15 letters.";
+        }
+
+        // Birthdate Validation
+        function ValidateBD() {
+            const bdate = document.getElementById("bdate").value;
+            const bdatePattern = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/;
+            document.getElementById("Rbdate").innerText =
+                bdatePattern.test(bdate) ? "" : "Invalid Birthdate. Must be MM-DD-YYYY.";
+        }
+
+        // Email Validation
+        function ValidateE() {
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            document.getElementById("Remail").innerText =
+                emailPattern.test(email) ? "" : "Invalid Email Address.";
+        }
+
+        // Confirm Email Validation
+        function ValidateCE() {
+            const email = document.getElementById("email").value;
+            const cemail = document.getElementById("cemail").value;
+            document.getElementById("Rcemail").innerText =
+                email === cemail ? "" : "Emails do not match.";
+        }
+
+        // Password Validation
+        function ValidateP() {
+            const password = document.getElementById("password").value;
+            const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*.]).{8,}$/;
+            document.getElementById("Rpassword").innerText =
+                passwordPattern.test(password)
+                    ? ""
+                    : "Invalid Password. Must be 8+ characters, include 1 number, and 1 special char.";
+        }
+
+        // Confirm Password Validation
+        function ValidateCP() {
+            const password = document.getElementById("password").value;
+            const cpassword = document.getElementById("cpassword").value;
+            document.getElementById("Rcpassword").innerText =
+                password === cpassword ? "" : "Passwords do not match.";
+        }
+    </script>
+</body>
+
+</html>
