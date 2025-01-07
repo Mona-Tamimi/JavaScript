@@ -6,40 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation</title>
     <style>
+       
         .error-message {
             color: red;
+        }
+
+        div {
+            border: 3px solid black;
+            box-shadow: 2px 2px 30px gray;
+            width: 600px;
+            padding: 20px;
+            margin-left: 30%;
+            margin-top: 10%;
         }
     </style>
 </head>
 
 <body>
-    <label for="fname">Enter a First Name:</label>
-    <input type="text" id="fname" name="fname" oninput="ValidateFN()" required />
-    <span id="Rfname" class="error-message"></span><br><br>
+    <div>
+        <label for="fname">Enter a First Name:</label>
+        <input type="text" id="fname" name="fname" oninput="ValidateFN()" required />
+        <span id="Rfname" class="error-message"></span><br><br>
 
-    <label for="lname">Enter a Last Name:</label>
-    <input type="text" id="lname" name="lname" oninput="ValidateLN()" required />
-    <span id="Rlname" class="error-message"></span><br><br>
+        <label for="lname">Enter a Last Name:</label>
+        <input type="text" id="lname" name="lname" oninput="ValidateLN()" required />
+        <span id="Rlname" class="error-message"></span><br><br>
 
-    <label for="bdate">Enter a Birthdate:</label>
-    <input type="text" id="bdate" name="bdate" oninput="ValidateBD()" required />
-    <span id="Rbdate" class="error-message"></span><br><br>
+        <label for="bdate">Enter a Birthdate:</label>
+        <input type="text" id="bdate" name="bdate" oninput="ValidateBD()" required />
+        <span id="Rbdate" class="error-message"></span><br><br>
 
-    <label for="email">Enter an Email:</label>
-    <input type="email" id="email" name="email" oninput="ValidateE()" required />
-    <span id="Remail" class="error-message"></span><br><br>
+        <label for="email">Enter an Email:</label>
+        <input type="email" id="email" name="email" oninput="ValidateE()" required />
+        <span id="Remail" class="error-message"></span><br><br>
 
-    <label for="cemail">Confirm Email:</label>
-    <input type="email" id="cemail" name="cemail" oninput="ValidateCE()" required />
-    <span id="Rcemail" class="error-message"></span><br><br>
+        <label for="cemail">Confirm Email:</label>
+        <input type="email" id="cemail" name="cemail" oninput="ValidateCE()" required />
+        <span id="Rcemail" class="error-message"></span><br><br>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" oninput="ValidateP()" required />
-    <span id="Rpassword" class="error-message"></span><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" oninput="ValidateP()" required />
+        <span id="Rpassword" class="error-message"></span><br><br>
 
-    <label for="cpassword">Confirm Password:</label>
-    <input type="password" id="cpassword" name="cpassword" oninput="ValidateCP()" required />
-    <span id="Rcpassword" class="error-message"></span><br><br>
+        <label for="cpassword">Confirm Password:</label>
+        <input type="password" id="cpassword" name="cpassword" oninput="ValidateCP()" required />
+        <span id="Rcpassword" class="error-message"></span><br><br>
+    </div>
 
     <script>
         // First Name Validation
